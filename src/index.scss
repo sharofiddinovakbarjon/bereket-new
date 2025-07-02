@@ -1,0 +1,150 @@
+@use "./styles/variables";
+@use "./styles/mixins";
+
+@font-face {
+  font-family: "TT-Travels";
+  src: url("./fonts/TT-Travels-regular.otf");
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "TT-Travels" !important;
+
+  -webkit-tap-highlight-color: transparent !important;
+  user-select: none !important;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+html,
+body {
+  background-color: var(--background-color);
+  font-family: "TT-Travels";
+  scroll-behavior: smooth;
+  scroll-padding-top: 200px !important;
+}
+
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  a {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 5px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-200);
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.section {
+  margin: 40px 0;
+}
+
+.navigations {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    color: var(--text-200);
+
+    &.active,
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+.amo-button-holder {
+  z-index: 80 !important;
+  right: 30px !important;
+}
+
+.loading-box {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px var(--border-color) inset !important;
+  box-shadow: 0 0 0px 1000px var(--border-color) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+  color: inherit !important;
+}
+
+.mobile-footer_navigation_bar {
+  display: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  background: none; // Remove any background
+  -webkit-tap-highlight-color: transparent !important; // Removes tap highlight on mobile
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: none;
+    outline: none;
+    box-shadow: none;
+  }
+}

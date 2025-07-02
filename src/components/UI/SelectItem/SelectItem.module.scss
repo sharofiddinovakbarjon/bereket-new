@@ -1,0 +1,59 @@
+.selectItem {
+  position: relative;
+  cursor: pointer;
+  z-index: 80;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+
+  .selected {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 5px;
+    color: var(--text-200);
+    text-transform: capitalize;
+
+    span {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+
+      &:first-child {
+        color: var(--text-300);
+      }
+    }
+  }
+
+  .menu {
+    position: absolute;
+    background-color: #fff;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    right: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow: hidden;
+
+    transition: opacity 0.2s, visibility 0.2s, transform 0.2s ease-in-out;
+
+    p {
+      padding: 10px 15px;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: var(--border-color);
+      }
+    }
+  }
+
+  &:hover {
+    .menu {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+}
